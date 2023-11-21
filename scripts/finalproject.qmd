@@ -10,6 +10,7 @@ editor: visual
 ```{r}
 library(vdemdata)
 library(dplyr)
+library(skimr)
 vdem <- vdem
 ```
 
@@ -30,8 +31,45 @@ vdem_subset <- vdem %>%
            country_name == "Philippines" |
            country_name == "Pakistan" |
            country_name == "United States of America") %>%
-  select(country_name, v2x_polyarchy, v2elsnlfc_0, v2elsnlfc_1)
+  select(country_name, 
+         year, 
+         v2x_frassoc_thick,
+         v2xel_frefair,
+         v2x_freexp_altinf,
+         v2x_elecoff,
+         v2x_suffr) %>%
+  filter(year >= 1971)
+```
 
-table(vdem_subset$country_name)
+### Data Exploration
+
+```{r}
+skim(vdemdata)
+```
+
+<insert interpretation here>
+
+### Data Analysis
+
+## Bangladesh
+
+```{r}
+# Nafis's visualization
+```
+
+<Interpretation of results>
+
+## Pakistan 
+
+```{r}
+# Faria's visualization
+```
+
+<Interpretation of results>
+
+## Philippines 
+```{r}
 
 ```
+
+## United States
