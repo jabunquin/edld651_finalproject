@@ -8,6 +8,9 @@ editor: visual
 ## Imports
 
 ```{r}
+#Install.packages("devtools)"
+#Install.packages("vdemdata)"ins
+
 library(vdemdata)
 library(dplyr)
 library(skimr)
@@ -15,18 +18,11 @@ vdem <- vdem
 ```
 
 ## Data Processing
-###  Data Examination
-
-```{r}
-vdem %>% 
-  select(contains('v2elsnlfc_1')) %>%
-  head()
-```
 
 ### Data Filtering
 
 ```{r}
-vdem_subset <- vdem %>%
+vdemdata <- vdem %>%
   filter(country_name == "Bangladesh" | 
            country_name == "Philippines" |
            country_name == "Pakistan" |
@@ -38,7 +34,10 @@ vdem_subset <- vdem %>%
          v2x_freexp_altinf,
          v2x_elecoff,
          v2x_suffr) %>%
-  filter(year >= 1971)
+  filter(year >= 1971) 
+
+head(vdemdata)
+
 ```
 
 ### Data Exploration
@@ -59,15 +58,17 @@ skim(vdemdata)
 
 <Interpretation of results>
 
-## Pakistan 
+## Pakistan
 
 ```{r}
 # Faria's visualization
+
 ```
 
 <Interpretation of results>
 
-## Philippines 
+## Philippines
+
 ```{r}
 
 ```
