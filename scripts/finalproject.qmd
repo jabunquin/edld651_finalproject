@@ -4,6 +4,8 @@ author: "Jon Benedik Bunquin, Nafisul Huq, and Faria Shaikh"
 format: html
 editor: visual
 warning: False
+embed-resources: true
+toc: true
 ---
 
 ## Imports
@@ -137,7 +139,7 @@ vdemdata_long %>%
   
 ```
 
-## United States
+### United States
 
 ```{r}
 vdemdata_long %>%
@@ -164,7 +166,6 @@ vdemdata_long %>%
 
 ```{r}
 
-{r}
 indicators = c('clean_elections' = 'Clean election', 
                'freedom_association' = 'Freedom of association', 
                'freedom_expression' = 'Freedom of expression')
@@ -180,7 +181,7 @@ vdemdata_long %>%
        caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0),
-        plot.caption = element_text(hjust = 0))
+        plot.caption = element_text(hjust = 0))
 
 ```
 
@@ -234,6 +235,3 @@ vdemdata_scored %>%
   theme_minimal()
 
 ```
-=======
-\`\`\`
->>>>>>> Stashed changes
