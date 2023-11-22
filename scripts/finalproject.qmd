@@ -60,7 +60,6 @@ skim(vdemdata)
 
 ```{r}
 vdemdata_long <- vdemdata %>%
-  select(1:5) %>%
   pivot_longer(
     cols = 3:5,
     names_to = 'criteria',
@@ -70,9 +69,9 @@ vdemdata_long <- vdemdata %>%
 head(vdemdata_long)
 ```
 
-### Data Analysis
+## Data Analysis
 
-## Bangladesh
+### Bangladesh
 
 ```{r}
 vdemdata_long %>%
@@ -95,7 +94,7 @@ vdemdata_long %>%
 
 <Interpretation of results>
 
-## Pakistan
+### Pakistan
 
 ```{r}
 # Faria's visualization
@@ -104,7 +103,7 @@ vdemdata_long %>%
 
 <Interpretation of results>
 
-## Philippines
+### Philippines
 
 ```{r}
 vdemdata_long %>%
@@ -144,4 +143,28 @@ vdemdata_long %>%
   theme_minimal() +
   theme(plot.caption = element_text(hjust = 0))
   
+```
+### Comparison of aggregated measures
+
+```{r}
+# calculate index score
+vdemdata_scored <- vdemdata_long %>%
+  pivot_wider( # convert the data to a wide format to convert all criteria back as columns 
+    names_from = "criteria",
+    values_from = "score",
+  ) %>%
+  mutate(electoral_democracy = (0.5 * # calculate based on VDEM formula of electoral democracy index
+                                  (elected_index *
+                                     clean_elections *
+                                     freedom_association *
+                                     freedom_expression *
+                                     suffrage)) +
+           (0.5 * ((.125 * elected_index) +
+                     (.25*clean_elections) +
+                     (.25 * freedom_association) +
+                     (.125 * suffrage) +
+                     (.25 * freedom_expression))))
+```
+
+
 ```
