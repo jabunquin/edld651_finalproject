@@ -97,13 +97,13 @@ vdemdata_long %>%
 ### Pakistan
 
 ```{r}
-# Faria's visualization
+
 vdemdata_long %>%
   filter(country_name == 'Pakistan') %>% 
   ggplot(aes(x = year, y = score, color = criteria)) +
   geom_point() +
   geom_line() + 
-  labs(title = 'Electoral Democracy in the Philippines from 1971 to 2022',
+  labs(title = 'Electoral Democracy in the Pakistan from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
        x = 'Index Score',
        y = 'Year',
@@ -116,7 +116,7 @@ vdemdata_long %>%
 
 ```
 
-<Interpretation of results>
+
 
 ### Philippines
 
