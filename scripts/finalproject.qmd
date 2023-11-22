@@ -3,6 +3,7 @@ title: "EDLD 651 Final Project"
 author: "Jon Benedik Bunquin, Nafisul Huq, and Faria Shaikh"
 format: html
 editor: visual
+warning: False
 ---
 
 ## Imports
@@ -34,7 +35,12 @@ vdemdata <- vdem %>%
          v2x_freexp_altinf,
          v2x_elecoff,
          v2x_suffr) %>%
-  filter(year >= 1971) 
+  filter(year >= 1971) %>% 
+  rename(freedom_association=v2x_frassoc_thick,
+         clean_elections=v2xel_frefair,
+         freedom_expression=v2x_freexp_altinf,
+         elected_index=v2x_elecoff,
+         suffrage=v2x_suffr)
 
 head(vdemdata)
 
