@@ -96,6 +96,21 @@ vdemdata_long %>%
 
 ```{r}
 # Faria's visualization
+vdemdata_long %>%
+  filter(country_name == 'Pakistan') %>% 
+  ggplot(aes(x = year, y = score, color = criteria)) +
+  geom_point() +
+  geom_line() + 
+  labs(title = 'Electoral Democracy in the Philippines from 1971 to 2022',
+       subtitle = 'Trends in electoral democracy index scores over the last 50 years',
+       x = 'Index Score',
+       y = 'Year',
+       color = 'Index',
+       caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
+  scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
+                    labels = c('Clean election', 'Freedom of association', 'Freedom of expression')) + 
+  theme_minimal() +
+  theme(plot.caption = element_text(hjust = 0))
 
 ```
 
@@ -165,6 +180,7 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
+<<<<<<< Updated upstream
 ### Aggregated Score Summary 
 
 ```{r}
@@ -192,3 +208,6 @@ vdemdata_scored %>%
   theme_minimal()
 
 ```
+=======
+\`\`\`
+>>>>>>> Stashed changes
