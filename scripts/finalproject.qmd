@@ -158,6 +158,32 @@ vdemdata_long %>%
   
 ```
 
+## Cross-Country Comparison
+
+### Comparison per individual measure
+
+```{r}
+
+{r}
+indicators = c('clean_elections' = 'Clean election', 
+               'freedom_association' = 'Freedom of association', 
+               'freedom_expression' = 'Freedom of expression')
+
+vdemdata_long %>%
+  ggplot(aes(y = country_name, x = score)) +
+  geom_bar(stat = "summary", fill = '#008080') +
+  facet_wrap(~criteria, labeller = labeller(criteria = indicators)) +
+  labs(title = 'Electoral democracy indicators in Bangladesh, Pakistan, Philippines, and USA', 
+       subtitle = 'Comparison of individual index scores',
+       x = 'Index Score',
+       y = 'Country',
+       caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0),
+        plot.caption = element_text(hjust = 0))
+
+```
+
 ### Comparison of aggregated measures
 
 ```{r}
@@ -180,7 +206,7 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
-<<<<<<< Updated upstream
+
 ### Aggregated Score Summary 
 
 ```{r}
