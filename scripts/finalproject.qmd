@@ -92,8 +92,6 @@ vdemdata_long %>%
   
 ```
 
-<Interpretation of results>
-
 ### Pakistan
 
 ```{r}
@@ -144,6 +142,7 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
   
 ```
+
 ### Comparison of aggregated measures
 
 ```{r}
@@ -166,5 +165,30 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
+### Aggregated Score Summary 
+
+```{r}
+
+vdemdata_scored %>%
+  group_by(country_name) %>%
+  summarise(yearly_average = mean(electoral_democracy),
+            yearly_median = median(electoral_democracy),
+            sd = sd(electoral_democracy),
+            min = min(electoral_democracy),
+            max = min(electoral_democracy))
+
+
+
+```
+
+### Visualizing Aggregate Score  
+
+```{r}
+
+vdemdata_scored %>%
+  ggplot(aes(x = year, y = electoral_democracy, color = country_name)) +
+  geom_point() +
+  geom_line() +
+  theme_minimal()
 
 ```
