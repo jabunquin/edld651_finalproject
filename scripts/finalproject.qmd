@@ -6,6 +6,7 @@ editor: visual
 warning: False
 embed-resources: true
 toc: true
+#may want to insert echo: false so that the code doesn't appear in your final project and/or code folding
 ---
 
 ## Imports
@@ -13,6 +14,9 @@ toc: true
 ```{r}
 #Install.packages("devtools")
 #Install.packages("vdemdata")
+
+#this may be because my RStudio is out of date, but I'm not able to install the vdemdata package and it's keeping me from rendering this file
+#very cool though that you're able to use data from an existing r package!
 
 library(vdemdata)
 library(dplyr)
@@ -46,6 +50,8 @@ vdemdata <- vdem %>%
          elected_index=v2x_elecoff,
          suffrage=v2x_suffr)
 
+#I appreciate this renaming, it makes the rest of your code much easier to follow!
+
 head(vdemdata)
 
 ```
@@ -54,6 +60,18 @@ head(vdemdata)
 
 ```{r}
 skim(vdemdata)
+
+#this might be a good place to insert a table with some descriptive statistics about your variables of interest, below is an outline of the code you could use, though I can't run it to check that it will work (also this assumes that percentages are meaningful so check that that is true for each of the included  variables)
+vdemdata %>% 
+  tbl_summary(
+  statistic = list(
+    freedom_association ~ "{p}%", clean_elections ~ "{p}%", suffrage ~ "{p}%"
+    ),
+  label = list(
+    freedom_association ~ "Freedom Association",
+    clean_elections ~ "Democratic Elections",
+    suffrage ~ "Suffrage",
+   )) %>% modify_caption("**Table 1. Descriptive Statistics**")
 ```
 
 <insert interpretation here>
@@ -67,7 +85,7 @@ vdemdata_long <- vdemdata %>%
     names_to = 'criteria',
     values_to = 'score'
     )
-
+#nice use of pivoting!
 head(vdemdata_long)
 ```
 
@@ -91,6 +109,8 @@ vdemdata_long %>%
                     labels = c('Clean election', 'Freedom of association', 'Freedom of expression')) + 
   theme_minimal() +
   theme(plot.caption = element_text(hjust = 0))
+
+#great use of a visualization! Since this and the next two graphs are all using the same x and y, I wonder if you could facet wrap by country and save yourself a bit of space in the document?
   
 ```
 
@@ -115,8 +135,6 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
 
 ```
-
-
 
 ### Philippines
 
@@ -207,8 +225,7 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
-
-### Aggregated Score Summary 
+### Aggregated Score Summary
 
 ```{r}
 
@@ -224,7 +241,7 @@ vdemdata_scored %>%
 
 ```
 
-### Visualizing Aggregate Score  
+### Visualizing Aggregate Score
 
 ```{r}
 
@@ -234,4 +251,5 @@ vdemdata_scored %>%
   geom_line() +
   theme_minimal()
 
+#great job using all of the assigned functions!
 ```
