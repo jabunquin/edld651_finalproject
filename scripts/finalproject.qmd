@@ -11,8 +11,9 @@ toc: true
 ## Imports
 
 ```{r}
-#Install.packages("devtools")
-#Install.packages("vdemdata")
+#Below,I changed "Install" to the lowercase "install". This makes it easier for peers to install these packages.
+#install.packages("devtools")
+#install.packages("vdemdata")
 
 library(vdemdata)
 library(dplyr)
@@ -116,8 +117,6 @@ vdemdata_long %>%
 
 ```
 
-
-
 ### Philippines
 
 ```{r}
@@ -169,10 +168,10 @@ vdemdata_long %>%
 indicators = c('clean_elections' = 'Clean election', 
                'freedom_association' = 'Freedom of association', 
                'freedom_expression' = 'Freedom of expression')
-
+#Below, I changed the fill from blue to different colors representing each country, just to make it easier to interpret.These colors match the colors in the final graph to add continuity to your document.
 vdemdata_long %>%
-  ggplot(aes(y = country_name, x = score)) +
-  geom_bar(stat = "summary", fill = '#008080') +
+  ggplot(aes(y = country_name, x = score, fill = country_name)) +
+  geom_bar(stat = "summary") +
   facet_wrap(~criteria, labeller = labeller(criteria = indicators)) +
   labs(title = 'Electoral democracy indicators in Bangladesh, Pakistan, Philippines, and USA', 
        subtitle = 'Comparison of individual index scores',
@@ -207,8 +206,7 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
-
-### Aggregated Score Summary 
+### Aggregated Score Summary
 
 ```{r}
 
@@ -224,7 +222,7 @@ vdemdata_scored %>%
 
 ```
 
-### Visualizing Aggregate Score  
+### Visualizing Aggregate Score
 
 ```{r}
 
