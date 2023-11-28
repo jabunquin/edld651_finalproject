@@ -11,13 +11,14 @@ toc: true
 ## Imports
 
 ```{r}
-#Install.packages("devtools")
-#Install.packages("vdemdata")
+#Try using echo = false so that the packages you use aren't displayed in the rendered document, maybe have them be cited at the end instead?
 
-library(vdemdata)
+#Install.packages("devtools") 
+#Install.packages("vdemdata")  #install.packages doesn't have/need to be included in the code chunk! You can run it in the console and then just load the package using library :)
+
+library(vdemdata) 
 library(dplyr)
 library(skimr)
-library(tidyverse)
 library(ggplot2)
 vdem <- vdem
 ```
@@ -44,7 +45,7 @@ vdemdata <- vdem %>%
          clean_elections=v2xel_frefair,
          freedom_expression=v2x_freexp_altinf,
          elected_index=v2x_elecoff,
-         suffrage=v2x_suffr)
+         suffrage=v2x_suffr) #great use of the pipe function in this code chunk!
 
 head(vdemdata)
 
@@ -53,7 +54,7 @@ head(vdemdata)
 ### Data Exploration
 
 ```{r}
-skim(vdemdata)
+skim(vdemdata) #I didn't know of the skim function in R, I will be using this in the future when I want a quick glance at rows/columns and the types of variables in my dataset
 ```
 
 <insert interpretation here>
@@ -68,7 +69,7 @@ vdemdata_long <- vdemdata %>%
     values_to = 'score'
     )
 
-head(vdemdata_long)
+head(vdemdata_long) #nice use of pivot_longer
 ```
 
 ## Data Analysis
@@ -80,10 +81,10 @@ vdemdata_long %>%
   filter(country_name == 'Bangladesh') %>% 
   ggplot(aes(x = year, y = score, color = criteria)) +
   geom_point() +
-  geom_line() + 
+  geom_line() +
   labs(title = 'Electoral Democracy in the Bangladesh from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
-       x = 'Index Score',
+       x = 'Index Score', 
        y = 'Year',
        color = 'Index',
        caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
@@ -91,6 +92,9 @@ vdemdata_long %>%
                     labels = c('Clean election', 'Freedom of association', 'Freedom of expression')) + 
   theme_minimal() +
   theme(plot.caption = element_text(hjust = 0))
+#I didn't know you can only use ' for naming I have always used " so this is good to know!
+
+#This is a really awesome graph! Great job changing the colors of the lines
   
 ```
 
@@ -112,11 +116,9 @@ vdemdata_long %>%
   scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
                     labels = c('Clean election', 'Freedom of association', 'Freedom of expression')) + 
   theme_minimal() +
-  theme(plot.caption = element_text(hjust = 0))
+  theme(plot.caption = element_text(hjust = 0)) #I like how you included a link to the dataset in the caption of the graph
 
 ```
-
-
 
 ### Philippines
 
@@ -207,8 +209,7 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
-
-### Aggregated Score Summary 
+### Aggregated Score Summary
 
 ```{r}
 
@@ -224,7 +225,7 @@ vdemdata_scored %>%
 
 ```
 
-### Visualizing Aggregate Score  
+### Visualizing Aggregate Score
 
 ```{r}
 
