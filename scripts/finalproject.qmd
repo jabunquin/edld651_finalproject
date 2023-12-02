@@ -6,13 +6,22 @@ editor: visual
 warning: False
 embed-resources: true
 toc: true
+bibliography: references.bib
 ---
 
-## Imports
+# Abstract
+
+# Introduction
+
+# Methods
 
 ```{r}
-#Install.packages("devtools")
-#Install.packages("vdemdata")
+## Imports
+
+#| echo: false
+
+#install.packages("devtools")
+#install.packages("vdemdata")
 
 library(vdemdata)
 library(dplyr)
@@ -71,7 +80,9 @@ vdemdata_long <- vdemdata %>%
 head(vdemdata_long)
 ```
 
-## Data Analysis
+# Results
+
+## Individual Country Results
 
 ### Bangladesh
 
@@ -83,8 +94,8 @@ vdemdata_long %>%
   geom_line() + 
   labs(title = 'Electoral Democracy in the Bangladesh from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
-       x = 'Index Score',
-       y = 'Year',
+       x = 'Year',
+       y = 'Index Score',
        color = 'Index',
        caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
   scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
@@ -105,8 +116,8 @@ vdemdata_long %>%
   geom_line() + 
   labs(title = 'Electoral Democracy in the Pakistan from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
-       x = 'Index Score',
-       y = 'Year',
+       x = 'Year',
+       y = 'Index Score',
        color = 'Index',
        caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
   scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
@@ -128,8 +139,8 @@ vdemdata_long %>%
   geom_line() + 
   labs(title = 'Electoral Democracy in the Philippines from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
-       x = 'Index Score',
-       y = 'Year',
+       x = 'Year',
+       y = 'Index Score',
        color = 'Index',
        caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
   scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
@@ -149,8 +160,8 @@ vdemdata_long %>%
   geom_line() + 
   labs(title = 'Electoral Democracy in the USA from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
-       x = 'Index Score',
-       y = 'Year',
+       x = 'Year',
+       y = 'Index Score',
        color = 'Index',
        caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
   scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
@@ -160,11 +171,13 @@ vdemdata_long %>%
   
 ```
 
-## Cross-Country Comparison
+## Cross-Country Results
 
-### Comparison per individual measure
+### Individual measures of electoral democracy 
 
 ```{r}
+
+#| Summary of individual measures of electoral democracy
 
 indicators = c('clean_elections' = 'Clean election', 
                'freedom_association' = 'Freedom of association', 
@@ -185,7 +198,7 @@ vdemdata_long %>%
 
 ```
 
-### Comparison of aggregated measures
+### Aggregated measure of electoral democracy
 
 ```{r}
 # calculate index score
@@ -207,10 +220,8 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
-
-### Aggregated Score Summary 
-
 ```{r}
+#| Descriptive statistics
 
 vdemdata_scored %>%
   group_by(country_name) %>%
@@ -224,9 +235,8 @@ vdemdata_scored %>%
 
 ```
 
-### Visualizing Aggregate Score  
-
 ```{r}
+#| Aggregate score visualization
 
 vdemdata_scored %>%
   ggplot(aes(x = year, y = electoral_democracy, color = country_name)) +
@@ -235,3 +245,6 @@ vdemdata_scored %>%
   theme_minimal()
 
 ```
+# Discussion and Conclusion
+
+# References
