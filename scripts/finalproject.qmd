@@ -28,6 +28,7 @@ library(dplyr)
 library(skimr)
 library(tidyverse)
 library(ggplot2)
+library(stats)
 vdem <- vdem
 ```
 
@@ -257,6 +258,30 @@ vdemdata_scored %>%
   theme_minimal()
 
 ```
+
+# Comparing three countries' mean democracy index scores with that of the United States using   two-sample t-test
+
+### Bangladesh
+
+```{r}
+us_vdemdata <- vdemdata_scored %>%
+  filter(country_name == 'United States of America')
+
+bd_vdemdata <- vdemdata_scored %>%
+  filter(country_name == 'Bangladesh')
+
+ttest_bd <- t.test(us_vdemdata$electoral_democracy,bd_vdemdata$electoral_democracy)
+print(ttest_bd)
+
+```
+For this two-sample t-test, we consider 
+
+**null hypothesis, Ho:**  there is no difference in the electoral democracy index scores between Bangladesh and the United States.
+**alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries. 
+
+While advancing to our t-test, we find an extremely **low p-value** *(<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore,  we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Bangladesh and the United States. 
+
+
 
 # Discussion and Conclusion
 
