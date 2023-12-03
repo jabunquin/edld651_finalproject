@@ -107,6 +107,11 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
   
 ```
+The above graph of Bangladesh shows an overview of the country's electoral democracy status from **1970 to 2022** focusing on three key variables - freedom of association, freedom of expression, and clean election. It reveals an unwavering trend of electoral democracy in the country ultimately leaning towards a declining state with a cumulative effect of the variables, where freedom of association is seen in a consistent battle to stay resilient in its consistent unstable trajectory, freedom of expression is found experiencing the most fluctuations with more decline and less rise in scores throughout the interval, and clean election is seen affected by the most severe slumps.  
+</br>
+The ups and downs of the variables include many significant events that impacted the democracy in Bangladesh in the given period. To begin with, Bangladesh witnessed the first blow in **1975** with the formation of a one-party government that threatened the country's free and fair election, freedom of expression, and freedom of association. Then, it saw the emergence of military rule in late **1975** against the backdrop of tyrannical rule lasting through **1980**.  Although sounds weird, it appeared as a pathway to get back to democracy. After years of smooth functioning, the military rule transformed into a figure of hatred and disdain. As a result, Bangladesh saw the fall of military dictatorship and the rise of democracy from **1990 to 2000**. The next bar towards the country's democracy became apparent in **2007** when an interim government came into play to offset that bar. While democracy sustained after that period it did not sustain for long. Greed of the erstwhile ruling party to stay in power battered the foundations of democracy, including clean election, freedom of speech, and freedom of association along with other components. The consequence of this event was so adverse that the country kept struggling to ascend the ladder of democracy until recently.  
+
+
 
 ### Pakistan
 
