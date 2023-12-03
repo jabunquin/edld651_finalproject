@@ -281,6 +281,44 @@ For this two-sample t-test, we consider
 
 While advancing to our t-test, we find an extremely **low p-value** *(<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore,  we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Bangladesh and the United States. 
 
+### Pakistan
+
+```{r}
+
+pk_vdemdata <- vdemdata_scored %>%
+  filter(country_name == 'Pakistan')
+
+ttest_pk <- t.test(us_vdemdata$electoral_democracy,pk_vdemdata$electoral_democracy)
+print(ttest_pk)
+
+```
+For this two-sample t-test, we consider 
+
+**null hypothesis, Ho:**  there is no difference in the electoral democracy index scores between Pakistan and the United States.
+**alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries. 
+
+While advancing to our t-test, we find an extremely **low p-value** *(<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore,  we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Pakistan and the United States. 
+
+### Philippines
+```{r}
+ph_vdemdata <- vdemdata_scored %>%
+  filter(country_name == 'Philippines')
+
+ttest_ph <- t.test(us_vdemdata$electoral_democracy,ph_vdemdata$electoral_democracy)
+print(ttest_ph)
+
+```
+
+
+
+For this two-sample t-test, we consider 
+
+**null hypothesis, Ho:**  there is no difference in the electoral democracy index scores between Philippines and the United States.
+**alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries. 
+
+While advancing to our t-test, we find an extremely **low p-value** *(<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore,  we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Philippines and the United States. 
+
+
 
 
 # Discussion and Conclusion
