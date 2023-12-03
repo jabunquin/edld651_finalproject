@@ -116,7 +116,9 @@ vdemdata_long %>%
   filter(country_name == 'Pakistan') %>% 
   ggplot(aes(x = year, y = score, color = criteria)) +
   geom_point() +
-  geom_line() + 
+  geom_line() + geom_vline(xintercept = c(1971,1977,1988,1999,2008)) + 
+  annotate("text", x=c(1970,1976,1986,1998,2007), y=0.1,label=c("Before 1971","1977","1988","1999","2008"),
+           color="tomato4",size=2.5, angle=90) +
   labs(title = 'Electoral Democracy in the Pakistan from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
        x = 'Year',
