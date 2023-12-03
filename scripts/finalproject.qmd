@@ -92,6 +92,9 @@ vdemdata_long %>%
   ggplot(aes(x = year, y = score, color = criteria)) +
   geom_point() +
   geom_line() + 
+  geom_vline(xintercept = c(1975,1980,1990,2000,2007,2013)) + 
+  annotate("text", x=c(1974,1979,1989,1999,2006,2012), y=0.1,label=c("Before 1975","1980","1990","2000","2007","2013"), 
+           color="tomato4",size=2.5, angle=90) + 
   labs(title = 'Electoral Democracy in the Bangladesh from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
        x = 'Year',
@@ -126,8 +129,6 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
 
 ```
-
-
 
 ### Philippines
 
@@ -173,7 +174,7 @@ vdemdata_long %>%
 
 ## Cross-Country Results
 
-### Individual measures of electoral democracy 
+### Individual measures of electoral democracy
 
 ```{r}
 
@@ -245,6 +246,7 @@ vdemdata_scored %>%
   theme_minimal()
 
 ```
+
 # Discussion and Conclusion
 
 # References
