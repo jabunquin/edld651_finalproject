@@ -15,15 +15,9 @@ bibliography: references.bib
 
 **Introduction**
 
-The geopolitical landscape of the post-World War II era witnessed a monumental shift with the global wave of decolonization, especially pronounced in the 1960s. This period marked the birth of numerous newly sovereign states, many of which embarked on the path of democratic governance. These nascent democracies, emerging from the shadows of
-colonial rule, faced the daunting task of establishing democratic systems, cultivating a political culture rooted in democratic principles, and nurturing values conducive to a democratic ethos. However, as illuminated by Kapstein and Converse (2008), these democracies, in their formative stages, encountered
-significant challenges, including institutional fragility and vulnerability to internal and external pressures, leading to concerns about democratic backsliding -- a regressive shift from democratic norms that could potentially pave the way for authoritarian regimes.
+The geopolitical landscape of the post-World War II era witnessed a monumental shift with the global wave of decolonization, especially pronounced in the 1960s. This period marked the birth of numerous newly sovereign states, many of which embarked on the path of democratic governance. These nascent democracies, emerging from the shadows of colonial rule, faced the daunting task of establishing democratic systems, cultivating a political culture rooted in democratic principles, and nurturing values conducive to a democratic ethos. However, as illuminated by Kapstein and Converse (2008), these democracies, in their formative stages, encountered significant challenges, including institutional fragility and vulnerability to internal and external pressures, leading to concerns about democratic backsliding -- a regressive shift from democratic norms that could potentially pave the way for authoritarian regimes.
 
 **Review of Literature**
-
-The study of electoral democracy over the past fifty years, especially in the context of post-colonial countries and comparative analyses with established democracies like the United States,
-is a rich field of inquiry. This literature review will explore key themes including the global context of democratic evolution post-decolonization, the specific democratic trajectories of Bangladesh, Pakistan, and the Philippines, methodological approaches in democracy research, and predictive models in
-political science.
 
 **Decolonization and Democracy**
 
