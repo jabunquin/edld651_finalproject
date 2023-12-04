@@ -53,16 +53,12 @@ Hutchcroft (2016) examines the role of political dynasties and the
 influence of populist leadership in shaping the Philippines' democratic framework. This country-specific analysis contributes to understanding the internal dynamics and challenges that influence democratic backsliding in the
 Philippines. 
 
+**Comparative Analysis of Democracies**
 
-
-
-
-
-
-
-
-
-
+Lijphart's work "Patterns of Democracy" provides a comprehensive framework for understanding different models of democracies and their comparative performances. This seminal work has
+been influential in shaping the study of democratic systems and their variations, contributing to a deeper understanding of the complexities of
+democratic governance.  Williams (2018)
+discusses the application of ARIMA models in political forecasting, offering an approach that can be instrumental in predicting future trends in electoral democracies.
 
 # Methods
 
