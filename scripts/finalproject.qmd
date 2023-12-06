@@ -1,5 +1,5 @@
 ---
-title: "EDLD 651 Final Project"
+title: "Electoral democracy over the past fifty years: A four-country comparison"
 author: "Jon Benedik Bunquin, Nafisul Huq, and Faria Shaikh"
 format: html
 editor: visual
