@@ -29,17 +29,17 @@ Moreover, as shared by @lin2020, these democracies, in their formative stages, a
 
 @smith2021 offers a detailed overview of political transformations following decolonization, while emphasizing the complexities faced by new states in establishing democratic governance.
 
-He suggests that the biggest challenges arise from a lack of ethnic diversity, economic challenges, and the legacies of colonial rule when establishing a democratic government. While not directly focused on democracy, @datta2018's work contributes to understanding the broader context of political transformations and democratization in post-colonial states. His work also offers insights into the historical context and processes of decolonization, providing a foundation of the subject and it's impact on subsequent democracies.
+He suggests that the biggest challenges arise from a lack of ethnic diversity, economic challenges, and the legacies of colonial rule when establishing a democratic government. While not directly focused on democracy, @datta2018's work contributes to understanding the broader context of political transformations and democratization in post-colonial states. His work also offers insights into the historical understanding of decolonization, which serves as a background of the subject and helps in understanding the impact of on subsequent democracies.
 
-Moreover, the enduring influence of colonization on institutional frameworks democratic structures is further emphasized by @bernhard2004. The study also shows that the existence of representative political bodies during the late colonial period clearly predicts the existence and stability of democracy in recent decades, which shows why the democratic institutions in developing countries have failed.
+Moreover, @bernhard2004 in his work also emphasizes on the lasting impact of colonization and decolonization on emerging*, "younger"* democracies. His research on the subject shows that the existence of representative political bodies during the late colonial period clearly predicts the existence and stability of democracy in recent decades, which shows why the democratic institutions in developing countries have failed.
 
 While not directly related to democratic government, @sultana2019 explores the broader implications of decolonization that goes beyond political ideologies and systems, and gains a deeper understanding of the profound impact on societies, including culture, values and power structures.
 
 ### b. Democratic Backsliding
 
-The concept of democratic backsliding has gained a lot of attention recently as it focuses on understanding the erosion of democratic norms and institutions. The term "democratic backsliding" is used to describe a progressive deterioration in the quality of democracy. This phenomenon occurs when essential democratic institutions become weakened or are exploited for purposes contrary to their intended democratic function. Such degradation in democratic processes and structures often transpires incrementally and may not be immediately apparent, leading to structural weaknesses developing over time.
+The concept of democratic backsliding has gained a lot of attention recently as it focuses on understanding the erosion of democratic norms and institutions. The term "democratic backsliding" is used to describe a progressive deterioration in the quality of democracy.
 
-@bermeo2016 discusses democratic backsliding as it leads to gradual decline in the quality of democracy. This happens when key institutions meant to support democracy become weak or are misused. In particular, the phenomenon of democratic backsliding in developing countries has gained significant attention from political scientists, and developing country scholars. The focus has been to understand the processes, implications, and potential mitigating factors associated with it.
+@bermeo2016 discusses democratic backsliding as it leads to gradual decline in the quality of democracy. This happens when key institutions meant to support democracy become weak or are misused. In particular, the phenomenon of democratic backsliding in developing countries has gained significant attention from political scientists, policy makers, and Global South scholars. The focus has been to understand the processes, implications, and potential mitigating factors associated with it.
 
 @luhrmann2019 critically studied democratic backsliding, and highlighted the challenges and nuances associated with understanding the complexities that are involved in assessing democratic decline in developing countries.
 
@@ -53,7 +53,7 @@ Furthermore, when it comes to Pakistan, @khalid2023 discusses the present situat
 
 @hoffman2011 also talks about the more complex dynamics of military extrication and temporary democracy in Pakistan. He also focuses on the relationship between involvement in wars and conflict due to military intervention and a lack of democratic governance.
 
-Finally, when it comes to Philippines, @hutchcroft2003 studied the origins and evolution of the democratic foundation in the country while offering a detailed analysis of the various events that impacted the history of democracy in the country. @lorch2021 explored why democracies get weaker,and what role do the civil society organizations (CSOs) have to play to support a democratic government. His study from the context of developing countries show that CSOs do not have a major impact on the success of democracy, making it even harder to achieve despite public consent and interest.
+Finally, when it comes to Philippines, @hutchcroft2003 studied the origins and evolution of the democratic foundation in the country while also offering a detailed analysis of the various events that impacted the history of democracy in the country. @lorch2021 explored why democracies get weaker,and what role do the civil society organizations (CSOs) have to play to support a democratic government. His study from the context of developing countries show that CSOs do not have a major impact on the success of democracy, making it even harder to achieve despite public consent and interest.
 
 ## Research Questions
 
