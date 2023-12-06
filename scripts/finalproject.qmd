@@ -13,35 +13,47 @@ bibliography: references.bib
 
 # Introduction
 
-**Introduction**
+**Background**
 
-The geopolitical landscape following post-World War II era witnessed a monumental shift with the global wave of decolonization which led to the birth of many newly sovereign states. These new countries, or "*young democracies*" embarked on the path of democratic governance.
+The geopolitical landscape following post-World War II era witnessed a huge shift with the global wave of decolonization. This change led to to the birth of many newly sovereign states. These new countries, or "*young democracies*" embarked on the path of democratic governance for the very first time.
 
-According to @barlas2019 these nascent democracies, emerging from the shadows of colonial rule, faced the daunting task of establishing democratic systems. Also, as shared by @lin2020, these democracies, in their formative stages, encountered significant challenges, including institutional fragility and vulnerability to internal and external pressures. These pressures led to significant concerns about "democratic backsliding" a term used to study the regressive shift from democratic norms that could potentially pave the way for authoritarian regimes.
+According to @barlas2019 these nascent democracies, emerging from the shadows of colonial rule are facing one big challenge: to establish structured, and stable democratic systems in their countries.
+
+Moreover, as shared by @lin2020, these democracies, in their formative stages, and even today, are encountering significant challenges, which includes institutional fragility , military coups, corrupt power systems, bad governance, and vulnerability to local and foreign pressures. These pressures led to significant concerns about "democratic backsliding" - a term that was coined particularly to study the regressive shift from democratic norms while create a way for authoritarian regimes.
 
 **Review of Literature**
 
 **a. Decolonization and Democracy**
 
-@smith2021 offers an overview of political transformations following decolonization, emphasizing the complexities faced by new states in establishing democratic governance.
+@smith2021 offers an detailed overview of political transformations following decolonization, while emphasizing the complexities faced by new states in establishing democratic governance.
 
-The biggest challenges arise from a lack of ethnic diversity, economic challenges, and the legacies of colonial rule when establishing a democratic regime. This seminal perspective on global democratization trends helps in understanding the challenges and successes of new democracies during this period.
+He suggests that the biggest challenges arise from a lack of ethnic diversity, economic challenges, and the legacies of colonial rule when establishing a democratic regime. While not directly focused on decolonization, @datta2018's work contributes to understanding the broader context of political transformations and democratization in post-colonial states. His work also offers insights into the historical context and processes of decolonization, providing a foundation of the subject and it's impact on subsequent democracies.
 
-While not directly focused on decolonization, @datta2018's work contributes to understanding the broader context of political transformations and democratization in post-colonial states. His work also offers insights into the historical context and processes of decolonization, providing a foundation of the subject and it's impact on subsequent democracies.
+Moreover, the enduring influence of colonization on institutional frameworks and governance structures is emphasized by @spiegeletal2016 . The study also shows that the existence of representative political bodies during the late colonial period clearly predicts the existence and stability of democracy in recent decades, which also highlights the long-term impact of colonial governance on democratic institutions in developing countries.
 
-@sultana2019 explores the pursuit of social justice through decolonizing development education, emphasizing the liberation and new ways of valuing that are central to decolonization. This perspective contributes to understanding the broader implications of decolonization beyond political contexts, encompassing ideologies and political system.
+While not directly related to democratic government, @sultana2019 explores the broader implications of decolonization that goes beyond political ideologies and systems, and have a deeper and profound impact on societies, including culture, values and classes.
 
-@spiegeletal2016 reflect on efforts to 'decolonize development studies' and the complex power dynamics they encounter, providing insights into the challenges and aspirations of decolonizing scholarship. This critical reflection is valuable for understanding the complexities and power dynamics involved in decolonization efforts within academic disciplines.
+**b. Democratic Backsliding**
 
-**Democratic Backsliding**
+The concept of democratic backsliding has gained a lot of attention recently as it focuses on understanding the erosion of democratic norms and institutions. The term "democratic backsliding" is used to describe a progressive deterioration in the quality of democracy. This phenomenon occurs when essential democratic institutions become weakened or are exploited for purposes contrary to their intended democratic function. Such degradation in democratic processes and structures often transpires incrementally and may not be immediately apparent, akin to structural weaknesses developing in a building over time.
 
-The concept of democratic backsliding has gained a lot of attention recently as it focuses on understanding the erosion of democratic norms and institutions. @bermeo2016 discusses democratic backsliding, emphasizing institutional vulnerabilities and the erosion of democratic norms and structures in detail. This work sheds light on the challenges faced by democracies in maintaining their democratic character and the factors contributing to democratic erosion. 
+@bermeo2016 discusses democratic backsliding as it leads to gradual decline in the quality of democracy. This happens when key institutions meant to support democracy become weak or are misused. In particular, the phenomenon of democratic backsliding in developing countries has gained significant attention from political scientists, and developing country scholars. The focus has been to understand the processes, implications, and potential mitigating factors associated with it.
 
-Apart from exploring the impact of decolonization on democracy in a whole part of the world, it is also very important to study democratic backsliding from perspective of independent countries. @ruud2018 delves into Bangladesh's political and democratic journey, focusing on its struggles with military rule and democratic governance. This country-specific analysis provides insights into the unique challenges and trajectories of Bangladesh's democracy, contributing to the understanding of democratic backsliding in the context of Bangladesh. While @jalal2014 offers a critical analysis of Pakistan's democratic evolution, highlighting the interplay between civilian governance and military power. Similarly, @hutchcroft2016 examines the role of political dynasties and the influence of populist leadership in shaping the Philippines' democratic framework.
+@luhrmann2019 critically studied democratic backsliding, and highlighted the challenges and nuances associated with understanding the complexities that are involved in assessing democratic decline in developing countries.
+
+Apart from exploring the impact of decolonization on democracy in an entire region, it is also very important to study democratic backsliding from perspective of independent countries. @ruud2018 delves into Bangladesh's political and democratic journey, focusing on its struggles with military rule and democratic governance. This country-specific analysis provides insights into the unique challenges and trajectories of Bangladesh's democracy, contributing to the understanding of democratic backsliding in the context of Bangladesh. While @jalal2014 offers a critical analysis of Pakistan's democratic evolution, highlighting the interplay between civilian governance and military power. Similarly, @hutchcroft2016 examines the role of political dynasties and the influence of populist leadership in shaping the Philippines' democratic framework.
 
 **Comparative Analysis of Democracies**
 
-@lijphart2013's work "Patterns of Democracy" provides a comprehensive framework for understanding different models of democracies and their comparative performances. This seminal work has been influential in shaping the study of democratic systems and their variations, contributing to a deeper understanding of the complexities of democratic governance.
+@lijphart2013's work "Patterns of Democracy" provides a comprehensive framework for understanding different models of democracies and their comparative performances. In particular, there are individual and very nuanced factors that impact the current state of democracy in each one of these countries. From the context of Bangladesh, Khan & Islam (2014) analyze the the compatibility of democracy and good governance in Bangladesh, and emphasize on the need for a stable democratic regime in the country while exploring the reasons it has not been successful so far. Moreover, Islam Shafqat (1998) also highlights the reasons behind the separation of Pakistan and Bangladesh while shedding light on how it has caused democratic backsliding in both the countries.
+
+Furthermore, when it comes to Pakistan, Khalid (2023) discusses the present situation and the current dilemma of democracy in Pakistan; while focusing on the reasons behind failure of democracy in the relatively young country despite many attempts at establishing a successful democratic government.
+
+Hoffman (2011) also talks about the complex dynamics of military extrication and temporary democracy in Pakistan. He also focuses on the relationship between military intervention and democratic governance.
+
+Finally, when it comes to Philippines, Hutchcroft & Rocamora (2003) deeply study the origins and evolution of the democratic foundation in the country while offering a detailed analysis of the various events that impacted the history of democracy in the country.
+
+To conclude, reviewing the literature on stability of democracy in developing countries including Bangladesh, Pakistan, and the Philippines help in gaining a deeper understanding of the challenges, dynamics and future prospects of the democratic governance in these countries.
 
 # Methods
 
