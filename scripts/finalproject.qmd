@@ -72,12 +72,28 @@ library(skimr)
 library(tidyverse)
 library(ggplot2)
 library(stats)
+library(forecast)
+
 vdem <- vdem
 ```
 
-## Data Processing
+## Data
 
-### Data Filtering
+Our study uses the varieties of democracy (VDEM) dataset (N = 27,555), which contains individual country expert assessments of various indicators of democracy. In this dataset, each case represents a country within a specific year, with corresponding democratic indicator assessments provided by a country expert. The complete VDEM dataset includes 483 indicators and indices, and is publicly accessible.
+
+Of particular interest to our research is electoral democracy in Bangladesh, Pakistan, the Philippines, and the United States of America. The selection of these countries is based on the authors' respective countries of origin. As our primary focus is on examining trends in democratic trajectories in developing nations, we started with countries with which we are most familiar.
+
+To extract this information, we initially filtered cases within the VDEM dataset based on the `country_name` column. For the sake of comparability, we also selected years based on the youngest democracy among the countries we chose,  Bangladesh, which started in 1971. Our final dataset is comprised of 208 cases, or 52 cases per country.
+
+The VDEM dataset identifies five indicators of electoral democracy. These variables are:
+- `v2x_frassoc_thick` or Freedom of Association
+- `v2xel_frefair` or Clean and Fair Elections
+- `v2x_freexp_altinf` or Freedom of Expression
+- `v2x_elecoff` or Index of Elected Officials
+- `v2x_suffr` or Right to Suffrage
+
+
+We used these variables to calculate an aggregated measure of electoral democracy, following the aggregation formula used by @coppedge2019.
 
 ```{r}
 vdemdata <- vdem %>%
@@ -99,19 +115,13 @@ vdemdata <- vdem %>%
          elected_index=v2x_elecoff,
          suffrage=v2x_suffr)
 
-head(vdemdata)
-
-```
-
-### Data Exploration
-
-```{r}
 skim(vdemdata)
+
 ```
 
-<insert interpretation here>
+## Data Analysis
 
-### Data Cleaning
+We conducted a time series analysis to examine changes in the electoral democracies of the countries under investigation. Data transformations, including the use of pivot tables, were carried out before visualizing the results using the `{ggplot}` package in `R`. To elucidate each time series plot, we provided contextual information and identified specific time periods that served as critical turning points in electoral democracies for each country.
 
 ```{r}
 vdemdata_long <- vdemdata %>%
@@ -120,25 +130,32 @@ vdemdata_long <- vdemdata %>%
     names_to = 'criteria',
     values_to = 'score'
     )
-
-head(vdemdata_long)
 ```
+
+We also conducted formal statistical testing to examine significant differences in the aggregated electoral democratic scores using two-sample t-tests. Finally, employing auto-regressive integrated moving average (ARIMA) models in the `{forecast}` package, we analyzed democratic trajectories and projected electoral democratic scores from 2023 to 2032. All visualizations and statistical analysis were carried out using R [@r2022]. 
 
 # Results
 
 ## Individual Country Results
 
+In this section, we discuss democratic trends, specifically, the freedom of association, freedom of expression, and the index of clean elections in Bangladesh, Pakistan, and the Philippines. Throughout each discussion, we emphasize pivotal moments in time that acted as turning points in the trajectory of democracies. Additionally, we provide context to explain fluctuations in democratic scores, as visualized in the time series graphs developed for each respective figure.
+
 ### Bangladesh
 
+Figure 1 illustrates an overview of the electoral democracy status in Bangladesh from **1970 to 2022**. Our analysis reveals an unwavering trend of electoral democracy in the country ultimately leaning towards a declining state with a cumulative effect of the variables, where freedom of association is seen in a consistent battle to stay resilient in its consistent unstable trajectory, freedom of expression is found experiencing the most fluctuations with more decline and less rise in scores throughout the interval, and clean election is seen affected by the most severe slumps.\
+</br> The ups and downs of the variables include many significant events that impacted the democracy in Bangladesh in the given period. To begin with, Bangladesh witnessed the first blow in **1975** with the formation of a one-party government that threatened the country's free and fair election, freedom of expression, and freedom of association. Then, it saw the emergence of military rule in late **1975** against the backdrop of tyrannical rule lasting through **1980**. Although sounds weird, it appeared as a pathway to get back to democracy. After years of smooth functioning, the military rule transformed into a figure of hatred and disdain. As a result, Bangladesh saw the fall of military dictatorship and the rise of democracy from **1990 to 2000**. The next bar towards the country's democracy became apparent in **2007** when an interim government came into play to offset that bar. While democracy sustained after that period it did not sustain for long. Greed of the erstwhile ruling party to stay in power battered the foundations of democracy, including clean election, freedom of speech, and freedom of association along with other components. The consequence of this event was so adverse that the country kept struggling to ascend the ladder of democracy until recently.
+
+
 ```{r}
+
 vdemdata_long %>%
   filter(country_name == 'Bangladesh') %>% 
   ggplot(aes(x = year, y = score, color = criteria)) +
   geom_point() +
   geom_line() + 
   geom_vline(xintercept = c(1975,1980,1990,2000,2007,2013)) + 
-  annotate("text", x=c(1974,1979,1989,1999,2006,2012), y=0.1,label=c("Before 1975","1980","1990","2000","2007","2013"), 
-           color="tomato4",size=2.5, angle=90) + 
+  annotate("text", x=c(1974,1979,1989,1999,2006,2012), y=0.1,label=c("Before 1975","1980","1990","2000","2007","2013"),
+           color="tomato4",size=2.5, angle=90, hjust = -11) + 
   labs(title = 'Electoral Democracy in the Bangladesh from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
        x = 'Year',
@@ -152,10 +169,9 @@ vdemdata_long %>%
   
 ```
 
-The above graph of Bangladesh shows an overview of the country's electoral democracy status from **1970 to 2022** focusing on three key variables - freedom of association, freedom of expression, and clean election. It reveals an unwavering trend of electoral democracy in the country ultimately leaning towards a declining state with a cumulative effect of the variables, where freedom of association is seen in a consistent battle to stay resilient in its consistent unstable trajectory, freedom of expression is found experiencing the most fluctuations with more decline and less rise in scores throughout the interval, and clean election is seen affected by the most severe slumps.\
-</br> The ups and downs of the variables include many significant events that impacted the democracy in Bangladesh in the given period. To begin with, Bangladesh witnessed the first blow in **1975** with the formation of a one-party government that threatened the country's free and fair election, freedom of expression, and freedom of association. Then, it saw the emergence of military rule in late **1975** against the backdrop of tyrannical rule lasting through **1980**. Although sounds weird, it appeared as a pathway to get back to democracy. After years of smooth functioning, the military rule transformed into a figure of hatred and disdain. As a result, Bangladesh saw the fall of military dictatorship and the rise of democracy from **1990 to 2000**. The next bar towards the country's democracy became apparent in **2007** when an interim government came into play to offset that bar. While democracy sustained after that period it did not sustain for long. Greed of the erstwhile ruling party to stay in power battered the foundations of democracy, including clean election, freedom of speech, and freedom of association along with other components. The consequence of this event was so adverse that the country kept struggling to ascend the ladder of democracy until recently.
-
 ### Pakistan
+
+
 
 ```{r}
 
@@ -165,7 +181,7 @@ vdemdata_long %>%
   geom_point() +
   geom_line() + geom_vline(xintercept = c(1971,1977,1988,1999,2008)) + 
   annotate("text", x=c(1970,1976,1986,1998,2007), y=0.1,label=c("Before 1971","1977","1988","1999","2008"),
-           color="tomato4",size=2.5, angle=90) +
+           color="tomato4",size=2.5, angle=90, hjust = -11) +
   labs(title = 'Electoral Democracy in the Pakistan from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
        x = 'Year',
@@ -178,19 +194,23 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
 
 ```
-
 ### Philippines
+
+In the Philippines, the **1970s** to the **1980s** were considered turbulent times for Philippine democracy as it fell under the dictatorship of President Ferdinand Marcos, Sr. Democracy in the Philippines was officially restored only in **1986** through snap elections, which led to the election of the first female president, Cory Aquino. Her ascent to the presidency was facilitated by large-scale protest demonstrations known as the People Power Revolution, toppling the Marcos regime's hold on the Philippine government.
+
+Electoral democracy remained stable until **2004**, when then-President Gloria Macapagal Arroyo became embroiled in a widespread presidential election cheating scandal. This explains the sharp decline in clean elections during that period. Nevertheless, other indicators of electoral democracy, such as freedom of association and freedom of expression, remained stable.
+
+It was only in **2016**, with the election of President Rodrigo Duterte, that other indicators of electoral democracy experienced a decline. Duterte, known for his iron-fisted leadership, verbally attacked his critics and encouraged his supporters to do the same. He weaponized the law to jail journalists critical of his administration and his drug war, equating anti-administration beliefs to anti-state and communist ideals.
 
 ```{r}
 vdemdata_long %>%
   filter(country_name == 'Philippines') %>% 
   ggplot(aes(x = year, y = score, color = criteria)) +
   geom_point() +
-  
   geom_line() + 
-  geom_vline(xintercept = c(1970,1986,2004,2009,2016)) + 
-  annotate("text", x=c(1969,1985,2003,2008,2015), y=0.1,label=c("1970","1986","2004","2009","2016"), 
-           color="tomato4",size=2.5, angle=90) +
+  geom_vline(xintercept = c(1970,1986,2004,2016)) + 
+  annotate("text", x=c(1969,1985,2003,2015), y=0.1,label=c("1970","1986","2004","2016"), 
+           color="tomato4",size=2.5, angle=90, hjust = -11) +
   labs(title = 'Electoral Democracy in the Philippines from 1971 to 2022',
        subtitle = 'Trends in electoral democracy index scores over the last 50 years',
        x = 'Year',
@@ -203,31 +223,11 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
   
 ```
-
-### United States
-
-```{r}
-vdemdata_long %>%
-  filter(country_name == 'United States of America') %>% 
-  ggplot(aes(x = year, y = score, color = criteria)) +
-  geom_point() +
-  geom_line() + 
-  labs(title = 'Electoral Democracy in the USA from 1971 to 2022',
-       subtitle = 'Trends in electoral democracy index scores over the last 50 years',
-       x = 'Year',
-       y = 'Index Score',
-       color = 'Index',
-       caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
-  scale_color_manual(values = c("#d8b365", "#2c7fb8", "#5ab4ac"),
-                    labels = c('Clean election', 'Freedom of association', 'Freedom of expression')) + 
-  theme_minimal() +
-  theme(plot.caption = element_text(hjust = 0))
-  
-```
-
 ## Cross-Country Results
 
 ### Individual measures of electoral democracy
+
+As shown in the figure below, we see large differences in the yearly average scores of the indicators of electoral democracy when comparing the emerging or young democracies of Bangladesh, Pakistan, and Philippines to the United States of America. Among the three indicators, young democracies appear to face the biggest challenges in terms of clean elections, while freedom of expression appears to be relative higher than other indicators.  
 
 ```{r}
 
@@ -274,6 +274,8 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
+Looking at the average of the aggregated yearly average, we see the magnitude of difference between the United States and the three emerging democracies. 
+
 ```{r}
 #| Descriptive statistics
 
@@ -283,9 +285,12 @@ vdemdata_scored %>%
             yearly_median = median(electoral_democracy),
             sd = sd(electoral_democracy),
             min = min(electoral_democracy),
-            max = min(electoral_democracy))
+            max = min(electoral_democracy)) %>%
+  knitr::kable()
 
 ```
+
+The gap in electoral democracy between stable and emerging democracies is also consistent over time, as shown in the line graph below. The three emerging democracies, meanwhile, fluctuate in terms of their electoral democracy scores from 1972 to 2022, overtaking each other at different points in time.
 
 ```{r}
 #| Aggregate score visualization
@@ -294,11 +299,20 @@ vdemdata_scored %>%
   ggplot(aes(x = year, y = electoral_democracy, color = country_name)) +
   geom_point() +
   geom_line() +
+  labs(title = 'Electoral Democracy in USA, BD, PK, and PH from 1971 to 2022',
+       subtitle = 'Trends in electoral democracy index scores over the last 50 years',
+       x = 'Year',
+       y = 'Index Score',
+       color = 'Index',
+       caption = 'Data Source: Varieties of Democracy (https://www.v-dem.net)') +
   theme_minimal()
 
 ```
 
-# Comparing three countries' mean democracy index scores with that of the United States using two-sample t-test
+
+## Comparing three countries' mean democracy index scores with that of the United States using two-sample t-test
+
+To formally examine the differences between the United States and each of the emerging democracies we used as cases in our research, namely, Bangladesh, Pakistan, and the Philippines, we employed two-sample t-tests comparing mean differences in electoral democracy measures. We summarize the findings of our comparisons below.
 
 ### Bangladesh
 
@@ -314,11 +328,9 @@ print(ttest_bd)
 
 ```
 
-For this two-sample t-test, we consider
+For this two-sample t-test, we consider **null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Bangladesh and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
 
-**null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Bangladesh and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
-
-While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Bangladesh and the United States.
+While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Bangladesh and the United States, with Bangladesh *(M = `r mean(bd_vdemdata$electoral_democracy)`)* being significantly lower than the United States *(M = `r mean(us_vdemdata$electoral_democracy)`)*.
 
 ### Pakistan
 
@@ -332,11 +344,9 @@ print(ttest_pk)
 
 ```
 
-For this two-sample t-test, we consider
+For this two-sample t-test, we consider **null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Pakistan and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
 
-**null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Pakistan and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
-
-While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Pakistan and the United States.
+While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Pakistan and the United States,  with Pakistan *(M = `r mean(pk_vdemdata$electoral_democracy)`)* being significantly lower than the United States *(M = `r mean(us_vdemdata$electoral_democracy)`)*.
 
 ### Philippines
 
@@ -349,11 +359,125 @@ print(ttest_ph)
 
 ```
 
-For this two-sample t-test, we consider
+For this two-sample t-test, we consider **null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Philippines and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
 
-**null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Philippines and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
+While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Philippines and the United States, with Philippines *(M = `r mean(ph_vdemdata$electoral_democracy)`)* being significantly lower than the United States *(M = `r mean(us_vdemdata$electoral_democracy)`)*.
 
-While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Philippines and the United States.
+## Forecasting democratic trajectories
+
+Finally, we investigated the trajectories of electoral democracies given current trends in democratic backsliding among the three countries we identified. In our study, we employed auto-regregressive integrated moving average (ARIMA) models to forecast succeeding electoral democracy scores. ARIMA models uses values in previous time points as basis for predicting future time points, with the assumption of auto and partial correlation of values between a point and previous points in time-series data. Note that the purpose of these forecasting models is to illustrate diverging or converging democratic trajectories, rather than to provide a definitive prediction of where democracies are headed based on the selected forecasting model.  
+
+ARIMA utilizes a parameter called `frequency`, which refers to the seasonality of time periods within a series. Observations within one season are used by the model to predict values. Here, we set seasonality based on number of years within one electoral term since our interest is electoral democracy. 
+
+Our projections indicate different trajectories for each of the countries we included in our study. Over the next ten years, our ARIMA model indicates an increase in electoral democracy for Bangladesh, a dip in Pakistan, and status quo for the Philippines. We also see a slight recovery in the United States in terms of electoral democracy over the next 10 years. These projections, however, must be interpreted with a grain of salt, especially with other, non-historical factors that can influence democratic trajectories that were not considered in building these models. 
+
+```{r}
+# Developing the forecasting model per country
+
+## USA
+ts_america <- vdemdata_scored %>%
+  filter(country_name == 'United States of America') %>%
+  select(year, electoral_democracy)
+
+ts_democracy_america <- ts(ts_america$electoral_democracy, 
+                           start = ts_america$year[1], end = ts_america$year[length(ts_america$year)], 
+                           frequency = 4)
+
+
+arima_model_usa <- auto.arima(ts_democracy_america, d = ndiffs(ts_democracy_america))
+forecast_values_usa <- forecast(arima_model_usa, h = 10)  
+
+## Bangladesh
+
+ts_bangladesh <- vdemdata_scored %>%
+  filter(country_name == 'Bangladesh') %>%
+  select(year, electoral_democracy)
+
+ts_democracy_bangladesh <- ts(ts_bangladesh$electoral_democracy, 
+                           start = ts_bangladesh$year[1], end = ts_bangladesh$year[length(ts_bangladesh$year)], 
+                           frequency = 5)
+
+arima_model_bangladesh <- auto.arima(ts_democracy_bangladesh, d = ndiffs(ts_democracy_bangladesh))
+forecast_values_bangladesh <- forecast(arima_model_bangladesh, h = 10)  
+
+
+## Pakistan
+
+ts_pakistan <- vdemdata_scored %>%
+  filter(country_name == 'Pakistan') %>%
+  select(year, electoral_democracy)
+
+ts_democracy_pakistan <- ts(ts_pakistan$electoral_democracy, 
+                           start = ts_pakistan$year[1], end = ts_pakistan$year[length(ts_pakistan$year)], 
+                           frequency = 5)
+
+arima_model_pakistan <- auto.arima(ts_democracy_pakistan, d = ndiffs(ts_democracy_pakistan))
+forecast_values_pakistan <- forecast(arima_model_pakistan, h = 10)  
+
+
+## Philippines
+
+ts_philippines <- vdemdata_scored %>%
+  filter(country_name == 'Philippines') %>%
+  select(year, electoral_democracy)
+
+ts_democracy_philippines <- ts(ts_philippines$electoral_democracy, 
+                           start = ts_philippines$year[1], end = ts_philippines$year[length(ts_philippines$year)], 
+                           frequency = 6)
+
+arima_model_philippines <- auto.arima(ts_democracy_philippines, d = ndiffs(ts_democracy_philippines))
+forecast_values_philippines <- forecast(arima_model_philippines, h = 10)  
+
+# Summarizing Forecasted Values based on Model
+
+forecast_usa <- forecast_values_usa %>% 
+  as_tibble() %>%
+  select(`Point Forecast`) %>%
+  mutate(year = c(2023:2032),
+         country_name = 'United States of America') %>%
+  rename(electoral_democracy = `Point Forecast`)
+
+forecast_bangladesh <- forecast_values_bangladesh %>% 
+  as_tibble() %>%
+  select(`Point Forecast`) %>%
+  mutate(year = c(2023:2032),
+         country_name = 'Bangladesh') %>%
+  rename(electoral_democracy = `Point Forecast`) %>%
+  select(year, country_name, electoral_democracy)
+
+forecast_pakistan <- forecast_values_pakistan %>% 
+  as_tibble() %>%
+  select(`Point Forecast`) %>%
+  mutate(year = c(2023:2032),
+         country_name = 'Pakistan') %>%
+  rename(electoral_democracy = `Point Forecast`) %>%
+  select(year, country_name, electoral_democracy)
+
+forecast_philippines <- forecast_values_philippines %>% 
+  as_tibble() %>%
+  select(`Point Forecast`) %>%
+  mutate(year = c(2023:2032),
+         country_name = 'Philippines') %>%
+  rename(electoral_democracy = `Point Forecast`) %>%
+  select(year, country_name, electoral_democracy)
+
+# Combining forecast values with dataset for visualization
+
+vdemdata_scored %>%
+  select(year, country_name, electoral_democracy) %>%
+  rbind(forecast_bangladesh, forecast_pakistan, forecast_philippines, forecast_usa) %>%
+  ggplot(aes(x = year, y = electoral_democracy, color = country_name)) +
+  geom_rect(aes(xmin = 2023, xmax = 2032, ymin = -Inf, ymax = Inf), fill = 'pink', alpha = 0.01, color = NA) +
+  geom_point() +
+  geom_line() +
+  labs(title = 'Forecasting Electoral Democracy in USA, BD, PK, and PH',
+       subtitle = 'Predicted levels of electoral democracy from 2023 to 2032',
+       x = 'Year',
+       y = 'Index Score',
+       color = 'Index',
+       caption = 'Region shaded in pink indicate forecasted values using ARIMA model') +
+  theme_minimal()
+```
 
 # Discussion and Conclusion
 
