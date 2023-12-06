@@ -12,6 +12,8 @@ bibliography: references.bib
 
 # Abstract
 
+Our study explores the evolution of electoral democracy in developing nations, particuarly focusing on Bangladesh, Pakistan, and the Philippines, compared with the United States, a long-established democracy. Using the V-Dem dataset, we conducted a time series analysis and historical review, uncovering challenges faced by these young democracies, including but not limited to military coups, unstable government transitions, and the rise of dictators. These findings highlight the contrast with the stable democratic indicators of the United States. We used ARIMA models to predict future democratic trends while suggesting the necessity of integrating more comprehensive factors for accurate forecasting. This research offers insights into the unique challenges and potential paths for developing democracies.
+
 # Introduction
 
 ## Background
