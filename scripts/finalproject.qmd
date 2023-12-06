@@ -394,7 +394,7 @@ Finally, we investigated the trajectories of electoral democracies given current
 
 ARIMA utilizes a parameter called `frequency`, which refers to the seasonality of time periods within a series. Observations within one season are used by the model to predict values. Here, we set seasonality based on number of years within one electoral term since our interest is electoral democracy.
 
-Our projections indicate different trajectories for each of the countries we included in our study. Over the next ten years, our ARIMA model indicates an increase in electoral democracy for Bangladesh, a dip in Pakistan, and status quo for the Philippines. We also see a slight recovery in the United States in terms of electoral democracy over the next 10 years. These projections, however, must be interpreted with caution, especially with other, non-historical factors that can influence democratic trajectories that were not considered in building these models.
+Our projections indicate different trajectories for each of the countries we included in our study. Over the next ten years, our ARIMA model indicates an increase in electoral democracy for Bangladesh and dips for both Pakistan and the Philippines. We also see a slight recovery in the United States in terms of electoral democracy over the next 10 years. These projections, however, must be interpreted with caution, especially with other, non-historical factors that can influence democratic trajectories that were not considered in building these models.
 
 ```{r}
 # Developing the forecasting model per country
