@@ -184,9 +184,13 @@ vdemdata_long %>%
 
 ### Pakistan
 
-In the **1970s**, Pakistan experienced significant political upheaval, as as it began with the country's first direct general elections in the year 1970. This led to the subsequent creation of Bangladesh in 1971. Zulfikar Ali Bhutto's rule, marked by progressive reforms, ended with a military coup in **1977**, leading to General Zia-ul-Haq's Islamization-focused regime.
+*Figure 2* illustrates the evolution of electoral democracy in Pakistan from the 1970 to 2022; highlighting the ups and downs within the political climate of the country in the last fifty years.
 
-The **1990s** were againcharacterized by unstable democracies, with frequent changes in leadership between Benazir Bhutto's PPP and Nawaz Sharif's PML-N, with allegations of corruption and economic challenges. The **2000s** saw General Pervez Musharraf's military rule, followed by his resignation in **2008** amid protests. The 2010s marked a return to civilian rule, with the first democratic transition of power in **2013**. Throughout this period, there has been a continued struggle with political corruption, economic issues, and the military's persistent influence in politics. These fluctuations are shown in *Figure 2* below.
+In the **1970s-90**, Prime Minister Zulfikar Ali Bhutto's rule ended with a military coup in **1977**, leading to General Zia-ul-Haq's authoritarian regime. This led to significant drop in both freedom of expression, and freedom of association Moreover, due to dictatorship, clean elections also remained at an all-time low during that period.
+
+Although no longer under military rule, the **1990s** in Pakistan were characterized by unstable democracies, with frequent changes in leadership between Benazir Bhutto's PPP and Nawaz Sharif's PML-N, but the democratic governance proved to be fruitful in achieving stability with some indicators of electoral democracy.
+
+In the **2000s,** Pakistan once again saw General Pervez Musharraf's military rule, leading to a dip in freedom of association. Followed by country-wide protests, and his resignation in 2008, the 2010s led to a civilian rule under democratic governance. This transition led to improving and creating some stability in both freedom of association, and freedom of expression. However, clean election remains a challenge due to a continued struggle with political corruption, economic issues, and the military's persistent influence in politics.
 
 ```{r}
 
