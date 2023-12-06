@@ -6,6 +6,7 @@ editor: visual
 warning: False
 embed-resources: true
 toc: true
+code-fold: true
 bibliography: references.bib
 ---
 
@@ -283,8 +284,6 @@ vdemdata_scored %>%
             sd = sd(electoral_democracy),
             min = min(electoral_democracy),
             max = min(electoral_democracy))
-
-
 
 ```
 
