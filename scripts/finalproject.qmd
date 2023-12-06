@@ -34,7 +34,7 @@ Moreover, the enduring influence of colonization on institutional frameworks dem
 
 While not directly related to democratic government, @sultana2019 explores the broader implications of decolonization that goes beyond political ideologies and systems, and gains a deeper understanding of the profound impact on societies, including culture, values and power structures.
 
-### b. Democratic Backsliding 
+### b. Democratic Backsliding
 
 The concept of democratic backsliding has gained a lot of attention recently as it focuses on understanding the erosion of democratic norms and institutions. The term "democratic backsliding" is used to describe a progressive deterioration in the quality of democracy. This phenomenon occurs when essential democratic institutions become weakened or are exploited for purposes contrary to their intended democratic function. Such degradation in democratic processes and structures often transpires incrementally and may not be immediately apparent, leading to structural weaknesses developing over time.
 
@@ -54,13 +54,12 @@ Furthermore, when it comes to Pakistan, @khalid2023 discusses the present situat
 
 Finally, when it comes to Philippines, @hutchcroft2003 studied the origins and evolution of the democratic foundation in the country while offering a detailed analysis of the various events that impacted the history of democracy in the country. @lorch2021 explored why democracies get weaker,and what role do the civil society organizations (CSOs) have to play to support a democratic government. His study from the context of developing countries show that CSOs do not have a major impact on the success of democracy, making it even harder to achieve despite public consent and interest.
 
-
 ## Research Questions
 
 The literature on stability of democracy in developing countries including Bangladesh, Pakistan, and the Philippines provided a backdrop to understanding the challenges, dynamics and future prospects of the democratic governance in these countries. In our research, we seek to provide empirical evidence to trace the evolution of electoral democracies among developing countries over the years. Specifically, we ask:
 
-1. How did electoral democracy change in Bangladesh, Pakistan, and the Philippines over the last fifty years?
-2. How do they compare to the United States of America, one of the world’s most powerful and longest-running democracies?
+1.  How did electoral democracy change in Bangladesh, Pakistan, and the Philippines over the last fifty years?
+2.  How do they compare to the United States of America, one of the world's most powerful and longest-running democracies?
 
 # Methods
 
@@ -89,15 +88,9 @@ Our study uses the varieties of democracy (VDEM) dataset (N = 27,555), which con
 
 Of particular interest to our research is electoral democracy in Bangladesh, Pakistan, the Philippines, and the United States of America. The selection of these countries is based on the authors' respective countries of origin. As our primary focus is on examining trends in democratic trajectories in developing nations, we started with countries with which we are most familiar.
 
-To extract this information, we initially filtered cases within the VDEM dataset based on the `country_name` column. For the sake of comparability, we also selected years based on the youngest democracy among the countries we chose,  Bangladesh, which started in 1971. Our final dataset is comprised of 208 cases, or 52 cases per country.
+To extract this information, we initially filtered cases within the VDEM dataset based on the `country_name` column. For the sake of comparability, we also selected years based on the youngest democracy among the countries we chose, Bangladesh, which started in 1971. Our final dataset is comprised of 208 cases, or 52 cases per country.
 
-The VDEM dataset identifies five indicators of electoral democracy. These variables are:
-- `v2x_frassoc_thick` or Freedom of Association
-- `v2xel_frefair` or Clean and Fair Elections
-- `v2x_freexp_altinf` or Freedom of Expression
-- `v2x_elecoff` or Index of Elected Officials
-- `v2x_suffr` or Right to Suffrage
-
+The VDEM dataset identifies five indicators of electoral democracy. These variables are: - `v2x_frassoc_thick` or Freedom of Association - `v2xel_frefair` or Clean and Fair Elections - `v2x_freexp_altinf` or Freedom of Expression - `v2x_elecoff` or Index of Elected Officials - `v2x_suffr` or Right to Suffrage
 
 We used these variables to calculate an aggregated measure of electoral democracy, following the aggregation formula used by @coppedge2019.
 
@@ -138,7 +131,7 @@ vdemdata_long <- vdemdata %>%
     )
 ```
 
-We also conducted formal statistical testing to examine significant differences in the aggregated electoral democratic scores using two-sample t-tests. Finally, employing auto-regressive integrated moving average (ARIMA) models in the `{forecast}` package, we analyzed democratic trajectories and projected electoral democratic scores from 2023 to 2032. All visualizations and statistical analysis were carried out using R [@r2022]. 
+We also conducted formal statistical testing to examine significant differences in the aggregated electoral democratic scores using two-sample t-tests. Finally, employing auto-regressive integrated moving average (ARIMA) models in the `{forecast}` package, we analyzed democratic trajectories and projected electoral democratic scores from 2023 to 2032. All visualizations and statistical analysis were carried out using R [@r2022].
 
 # Results
 
@@ -150,7 +143,6 @@ In this section, we discuss democratic trends, specifically, the freedom of asso
 
 Figure 1 illustrates an overview of the electoral democracy status in Bangladesh from **1970 to 2022**. Our analysis reveals an unwavering trend of electoral democracy in the country ultimately leaning towards a declining state with a cumulative effect of the variables, where freedom of association is seen in a consistent battle to stay resilient in its consistent unstable trajectory, freedom of expression is found experiencing the most fluctuations with more decline and less rise in scores throughout the interval, and clean election is seen affected by the most severe slumps.\
 </br> The ups and downs of the variables include many significant events that impacted the democracy in Bangladesh in the given period. To begin with, Bangladesh witnessed the first blow in **1975** with the formation of a one-party government that threatened the country's free and fair election, freedom of expression, and freedom of association. Then, it saw the emergence of military rule in late **1975** against the backdrop of tyrannical rule lasting through **1980**. Although sounds weird, it appeared as a pathway to get back to democracy. After years of smooth functioning, the military rule transformed into a figure of hatred and disdain. As a result, Bangladesh saw the fall of military dictatorship and the rise of democracy from **1990 to 2000**. The next bar towards the country's democracy became apparent in **2007** when an interim government came into play to offset that bar. While democracy sustained after that period it did not sustain for long. Greed of the erstwhile ruling party to stay in power battered the foundations of democracy, including clean election, freedom of speech, and freedom of association along with other components. The consequence of this event was so adverse that the country kept struggling to ascend the ladder of democracy until recently.
-
 
 ```{r}
 
@@ -177,7 +169,9 @@ vdemdata_long %>%
 
 ### Pakistan
 
+In the 1970s, Pakistan experienced significant political upheaval, as as it began with the country's first direct general elections in the year 1970. This led to the subsequent creation of Bangladesh in 1971. Zulfikar Ali Bhutto's rule, marked by progressive reforms, ended with a military coup in 1977, leading to General Zia-ul-Haq's Islamization-focused regime.
 
+The 1990s were againcharacterized by unstable democracies, with frequent changes in leadership between Benazir Bhutto's PPP and Nawaz Sharif's PML-N, with allegations of corruption and economic challenges. The 2000s saw General Pervez Musharraf's military rule, followed by his resignation in 2008 amid protests. The 2010s marked a return to civilian rule, with the first democratic transition of power in 2013. Throughout this period, there has been a continued struggle with political corruption, economic issues, and the military's persistent influence in politics.
 
 ```{r}
 
@@ -200,6 +194,7 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
 
 ```
+
 ### Philippines
 
 In the Philippines, the **1970s** to the **1980s** were considered turbulent times for Philippine democracy as it fell under the dictatorship of President Ferdinand Marcos, Sr. Democracy in the Philippines was officially restored only in **1986** through snap elections, which led to the election of the first female president, Cory Aquino. Her ascent to the presidency was facilitated by large-scale protest demonstrations known as the People Power Revolution, toppling the Marcos regime's hold on the Philippine government.
@@ -229,11 +224,12 @@ vdemdata_long %>%
   theme(plot.caption = element_text(hjust = 0))
   
 ```
+
 ## Cross-Country Results
 
 ### Individual measures of electoral democracy
 
-As shown in the figure below, we see large differences in the yearly average scores of the indicators of electoral democracy when comparing the emerging or young democracies of Bangladesh, Pakistan, and Philippines to the United States of America. Among the three indicators, young democracies appear to face the biggest challenges in terms of clean elections, while freedom of expression appears to be relative higher than other indicators.  
+As shown in the figure below, we see large differences in the yearly average scores of the indicators of electoral democracy when comparing the emerging or young democracies of Bangladesh, Pakistan, and Philippines to the United States of America. Among the three indicators, young democracies appear to face the biggest challenges in terms of clean elections, while freedom of expression appears to be relative higher than other indicators.
 
 ```{r}
 
@@ -280,7 +276,7 @@ vdemdata_scored <- vdemdata_long %>%
                      (.25 * freedom_expression))))
 ```
 
-Looking at the average of the aggregated yearly average, we see the magnitude of difference between the United States and the three emerging democracies. 
+Looking at the average of the aggregated yearly average, we see the magnitude of difference between the United States and the three emerging democracies.
 
 ```{r}
 #| Descriptive statistics
@@ -314,7 +310,6 @@ vdemdata_scored %>%
   theme_minimal()
 
 ```
-
 
 ## Comparing three countries' mean democracy index scores with that of the United States using two-sample t-test
 
@@ -352,7 +347,7 @@ print(ttest_pk)
 
 For this two-sample t-test, we consider **null hypothesis, Ho:** there is no difference in the electoral democracy index scores between Pakistan and the United States. **alternative hypothesis, Ha:** there is a difference between the electoral democracy index scores between these two countries.
 
-While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Pakistan and the United States,  with Pakistan *(M = `r mean(pk_vdemdata$electoral_democracy)`)* being significantly lower than the United States *(M = `r mean(us_vdemdata$electoral_democracy)`)*.
+While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)* which gives us strong evidence to reject the null hypothesis. Therefore, we conclude that there is a statistically significant difference in the mean electoral democracy index scores between Pakistan and the United States, with Pakistan *(M = `r mean(pk_vdemdata$electoral_democracy)`)* being significantly lower than the United States *(M = `r mean(us_vdemdata$electoral_democracy)`)*.
 
 ### Philippines
 
@@ -371,11 +366,11 @@ While advancing to our t-test, we find an extremely **low p-value** *(\<2.2e-16)
 
 ## Forecasting democratic trajectories
 
-Finally, we investigated the trajectories of electoral democracies given current trends in democratic backsliding among the three countries we identified. In our study, we employed auto-regregressive integrated moving average (ARIMA) models to forecast succeeding electoral democracy scores. ARIMA models uses values in previous time points as basis for predicting future time points, with the assumption of auto and partial correlation of values between a point and previous points in time-series data. Note that the purpose of these forecasting models is to illustrate diverging or converging democratic trajectories, rather than to provide a definitive prediction of where democracies are headed based on the selected forecasting model.  
+Finally, we investigated the trajectories of electoral democracies given current trends in democratic backsliding among the three countries we identified. In our study, we employed auto-regregressive integrated moving average (ARIMA) models to forecast succeeding electoral democracy scores. ARIMA models uses values in previous time points as basis for predicting future time points, with the assumption of auto and partial correlation of values between a point and previous points in time-series data. Note that the purpose of these forecasting models is to illustrate diverging or converging democratic trajectories, rather than to provide a definitive prediction of where democracies are headed based on the selected forecasting model.
 
-ARIMA utilizes a parameter called `frequency`, which refers to the seasonality of time periods within a series. Observations within one season are used by the model to predict values. Here, we set seasonality based on number of years within one electoral term since our interest is electoral democracy. 
+ARIMA utilizes a parameter called `frequency`, which refers to the seasonality of time periods within a series. Observations within one season are used by the model to predict values. Here, we set seasonality based on number of years within one electoral term since our interest is electoral democracy.
 
-Our projections indicate different trajectories for each of the countries we included in our study. Over the next ten years, our ARIMA model indicates an increase in electoral democracy for Bangladesh, a dip in Pakistan, and status quo for the Philippines. We also see a slight recovery in the United States in terms of electoral democracy over the next 10 years. These projections, however, must be interpreted with a grain of salt, especially with other, non-historical factors that can influence democratic trajectories that were not considered in building these models. 
+Our projections indicate different trajectories for each of the countries we included in our study. Over the next ten years, our ARIMA model indicates an increase in electoral democracy for Bangladesh, a dip in Pakistan, and status quo for the Philippines. We also see a slight recovery in the United States in terms of electoral democracy over the next 10 years. These projections, however, must be interpreted with a grain of salt, especially with other, non-historical factors that can influence democratic trajectories that were not considered in building these models.
 
 ```{r}
 # Developing the forecasting model per country
